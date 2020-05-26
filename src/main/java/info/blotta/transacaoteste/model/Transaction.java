@@ -4,20 +4,14 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
 
 @Entity
 public class Transaction {
 
-    //@GeneratedValue(strategy = GenerationType.AUTO)
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
@@ -32,14 +26,16 @@ public class Transaction {
 
     private BigDecimal value;
 
+    @Enumerated(EnumType.STRING)
     private CardApplication cardApplication;
 
+    @Enumerated(EnumType.STRING)
     private PaymentStatus status;
 
-    // /**
-    //  * @deprecated Hibernate only
-    //  */
-    // public Transaction() {}
+    /**
+     * @deprecated Hibernate only
+     */
+    public Transaction() {}
 
     public Transaction(@JsonProperty("id") long id,
                        @JsonProperty("date") LocalDate date,

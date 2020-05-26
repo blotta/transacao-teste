@@ -14,7 +14,7 @@ public class TransactionService {
     private final TransactionDao transactionDao;
 
     @Autowired
-    public TransactionService(@Qualifier("listDB") TransactionDao transactionDao) {
+    public TransactionService(@Qualifier("h2DB") TransactionDao transactionDao) {
         this.transactionDao = transactionDao;
     }
 

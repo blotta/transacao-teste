@@ -6,5 +6,5 @@ CREATE TABLE TBL_TRANSACTIONS (
     time TIME NOT NULL,
     value DECIMAL NOT NULL,
     card_application ENUM('DEBITO', 'CREDITO', 'VOUCHER') NOT NULL,
-    payment_method ENUM('SUCCESS', 'PENDING', 'CANCELED', 'FAILED') NOT NULL
+    payment_status ENUM('SUCCESS', 'PENDING', 'CANCELED', 'FAILED') NOT NULL
 );
