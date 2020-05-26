@@ -26,10 +26,10 @@ public class Transaction {
 
     private BigDecimal value;
 
-    @Enumerated(EnumType.STRING)
+    @Enumerated
     private CardApplication cardApplication;
 
-    @Enumerated(EnumType.STRING)
+    @Enumerated
     private PaymentStatus status;
 
     /**
